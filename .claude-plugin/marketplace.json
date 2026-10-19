@@ -1,0 +1,17 @@
+{
+  "name": "mangrove",
+  "owner": {
+    "name": "Mangrove",
+    "email": "hello@mangrove.now"
+  },
+  "metadata": {
+    "description": "Plugins de Claude Code compartidos por los proyectos de Mangrove"
+  },
+  "plugins": [
+    {
+      "name": "mangrove-board",
+      "source": "./plugins/mangrove-board",
+      "description": "Crear, ordenar y mover tickets en el board mangrove-freelance"
+    }
+  ]
+}

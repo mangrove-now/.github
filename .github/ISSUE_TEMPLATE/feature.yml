@@ -1,0 +1,27 @@
+name: Feature
+description: Algo nuevo que la plataforma tiene que poder hacer
+title: "Agregar "
+type: Feature
+projects: ["mangrove-now/1"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: Qué problema resuelve y para quién (rol, cliente).
+    validations:
+      required: true
+  - type: textarea
+    id: todo
+    attributes:
+      label: Qué hay que hacer
+      description: Una línea por cosa a entregar.
+      value: |
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: Referencias
+      description: Capturas, ejemplos, tickets relacionados.

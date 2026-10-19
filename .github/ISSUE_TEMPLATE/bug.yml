@@ -1,0 +1,32 @@
+name: Bug
+description: Algo que no funciona como debería
+title: "Corregir "
+type: Bug
+projects: ["mangrove-now/1"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: Qué pasa, dónde (web, app, mail, reporte) y con qué usuario o rol.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Cómo reproducirlo
+      value: |
+        1.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Qué debería pasar
+    validations:
+      required: true
+  - type: textarea
+    id: refs
+    attributes:
+      label: Referencias
+      description: Capturas o videos. No pegues contraseñas ni datos de acceso.

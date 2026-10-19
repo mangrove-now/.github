@@ -1,0 +1,20 @@
+name: Task
+description: Trabajo técnico, investigación o mantenimiento
+type: Task
+projects: ["mangrove-now/1"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto
+      description: Por qué hace falta.
+    validations:
+      required: true
+  - type: textarea
+    id: todo
+    attributes:
+      label: Qué hay que hacer
+      value: |
+        - [ ]
+    validations:
+      required: true
