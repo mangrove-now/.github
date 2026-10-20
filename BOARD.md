@@ -46,12 +46,8 @@ Para ver las de un repo: `gh label list -R mangrove-now/<repo>`.
 
 | Vista | Qué muestra |
 |---|---|
-| Board | Kanban de lo abierto y lo que salió en la última semana |
-| Backlog | Tabla de lo abierto, agrupada por Priority |
-| Roadmap | Lo abierto con Target, en el tiempo |
-| Bugs | Bugs abiertos |
-| Mi trabajo | Lo asignado a quien mira |
-| Shipped | Lo deployado y validado: el historial de entregas |
+| Board | Kanban por Status: lo abierto y lo que salió en la última semana |
+| Table | Todos los tickets: título, type, labels, repo, fecha de cierre y PR |
 
 ## Sumar un proyecto nuevo
 
