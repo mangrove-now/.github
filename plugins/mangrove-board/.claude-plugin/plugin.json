@@ -1,6 +1,6 @@
 {
   "name": "mangrove-board",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Crear, ordenar y mover tickets en el board mangrove-freelance siguiendo las convenciones de Mangrove",
   "author": {
     "name": "Mangrove"
