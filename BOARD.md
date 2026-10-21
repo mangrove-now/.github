@@ -10,7 +10,7 @@ Cada ticket es un issue del repo del cliente. El campo **Repository** dice de qu
 | Campo | Valores | Para qué |
 |---|---|---|
 | **Type** (del issue) | Bug · Feature · Task | Qué clase de trabajo es |
-| **Status** | Backlog → Todo → In Progress → In Review → Deployed | Dónde está |
+| **Status** | Backlog → Todo → In Progress → In Review → Deployed → Validated | Dónde está |
 | **Priority** | Urgent · High · Medium · Low | Qué va primero |
 | **Size** | XS (< 1 h) · S (medio día) · M (1–2 días) · L (1 semana) · XL | Cuánto pesa. Un XL se parte |
 | **Target** | fecha | Fecha comprometida; alimenta el Roadmap |
@@ -19,8 +19,12 @@ Cada ticket es un issue del repo del cliente. El campo **Repository** dice de qu
 - **Backlog**: ideas y pedidos sin priorizar.
 - **Todo**: priorizado, con body completo y Size estimado.
 - **In Progress**: alguien lo está haciendo.
-- **In Review**: listo, esperando revisión o validación del cliente.
-- **Deployed**: en producción. Un issue cerrado pasa solo a Deployed.
+- **In Review**: PR abierto, esperando revisión.
+- **Deployed**: en producción. Un issue cerrado pasa solo a Deployed. En apps mobile, mergear no es
+  estar en producción: el ticket pasa a Deployed cuando se publica la versión.
+- **Validated**: el cliente lo vio y lo aprobó. Se mueve a mano.
+
+Lo cerrado se archiva solo a los 7 días, así la columna Deployed muestra lo que salió en la semana.
 
 ## Labels
 
@@ -42,12 +46,8 @@ Para ver las de un repo: `gh label list -R mangrove-now/<repo>`.
 
 | Vista | Qué muestra |
 |---|---|
-| Board | Kanban de lo abierto |
-| Backlog | Tabla de lo abierto, agrupada por Priority |
-| Roadmap | Lo abierto con Target, en el tiempo |
-| Bugs | Bugs abiertos |
-| Mi trabajo | Lo asignado a quien mira |
-| Shipped | Lo deployado: el historial de entregas |
+| Board | Kanban por Status: lo abierto y lo que salió en la última semana |
+| Table | Todos los tickets: título, type, labels, repo, fecha de cierre y PR |
 
 ## Sumar un proyecto nuevo
 

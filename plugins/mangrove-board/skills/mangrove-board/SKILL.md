@@ -35,10 +35,11 @@ Each ticket is an issue in the client's repo (`mangrove-now/<repo>`). The full h
 | Backlog | New and not prioritized (default for new tickets) |
 | Todo | Prioritized, body complete, Size set |
 | In Progress | You or someone started the work |
-| In Review | PR open or waiting for client validation |
-| Deployed | In production; closed issues land here |
+| In Review | PR open, waiting for review |
+| Deployed | In production; closed issues land here. For mobile apps, merged is not in production: move it here once the release is published |
+| Validated | The client saw it and approved it (moved by hand, ask the user) |
 
-Keep the board honest: when you start work on an issue move it to **In Progress**; when you open its PR move it to **In Review** and put `Closes #<n>` in the PR body; when it ships, close the issue and make sure it is **Deployed**. Ask before closing an issue the user did not ask to close.
+Keep the board honest: when you start work on an issue move it to **In Progress**; when you open its PR move it to **In Review** and put `Closes #<n>` in the PR body; when it ships, close the issue and make sure it is **Deployed**; once the client approves it, move it to **Validated**. Ask before closing an issue the user did not ask to close.
 
 ## IDs
 
@@ -46,7 +47,7 @@ Keep the board honest: when you start work on an issue move it to **In Progress*
 PROJECT_ID = PVT_kwDOEQO43c4BiY7m
 
 Status   PVTSSF_lADOEQO43c4BiY7mzhhRK_k
-  Backlog db4be10f · Todo f75ad846 · In Progress 47fc9ee4 · In Review 64bc7190 · Deployed 535c0267
+  Backlog db4be10f · Todo f75ad846 · In Progress 47fc9ee4 · In Review 64bc7190 · Deployed 535c0267 · Validated e7f6108c
 Priority PVTSSF_lADOEQO43c4BiY7mzhmOf9A
   Urgent 56e43212 · High 02f5aeaa · Medium 399e0a96 · Low 71d20546
 Size     PVTSSF_lADOEQO43c4BiY7mzhmOf9E
@@ -90,7 +91,7 @@ gh project item-edit --project-id PVT_kwDOEQO43c4BiY7m --id "$ITEM_ID" \
 **Review what's open**
 ```bash
 gh project item-list 1 --owner mangrove-now --format json --limit 500 \
-  --jq '.items[] | select(.status != "Deployed") | "\(.status)\t\(.priority // "-")\t\(.repository)#\(.content.number)\t\(.title)"'
+  --jq '.items[] | select(.status != "Deployed" and .status != "Validated") | "\(.status)\t\(.priority // "-")\t\(.repository)#\(.content.number)\t\(.title)"'
 ```
 
 After changing tickets, tell the user what moved in one short list (`#285 → In Review`), with the board link.
